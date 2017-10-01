@@ -4,6 +4,7 @@ package ejemplo;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -18,8 +19,13 @@ public class Ejemplo {
        String clave="mysql2017";
         try {
             conexion= DriverManager.getConnection(url,usuario,clave);
+             System.out.println("Se conecto");
+            String cadena="INSERT INTO marcador (latitud,longitud) ";
+            Statement sentencia;
+            sentencia=conexion.createStatement();
+            sentencia.execute(cadena);
         } catch (SQLException ex) {
-            Logger.getLogger(Ejemplo.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage()) ;
         }
        
        
