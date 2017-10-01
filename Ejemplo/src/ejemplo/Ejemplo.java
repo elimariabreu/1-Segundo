@@ -14,13 +14,13 @@ public class Ejemplo {
     
     public static void main(String[] args) {
       Connection conexion;
-       String url="jdbc:mysql://localhost:3306/marcador";
+       String url="jdbc:mysql://localhost:3306/javadb";
        String usuario="root";
        String clave="mysql2017";
         try {
             conexion= DriverManager.getConnection(url,usuario,clave);
              System.out.println("Se conecto");
-            String cadena="INSERT INTO marcador (latitud,longitud) ";
+            String cadena="INSERT INTO ejemplo (idejemplo,dato)VALUES(1,1) ";
             Statement sentencia;
             sentencia=conexion.createStatement();
             sentencia.execute(cadena);
